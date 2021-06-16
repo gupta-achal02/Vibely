@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Movie
+{% endblock %}
+
+{% block main %}
+    <h4>You might like these movies...</h4>
+    <br><br>
+    <div class="section">
+        <table class="table table-hover" style="margin-left:auto;margin-right:auto;">
+
+            <tbody>
+                {% for i in range(length) %}
+                    <tr>
+                        <td><img src={{ movie_data[i]['cover'] }} alt=""></img></td>
+                        <td><br><br><br><h5><a href= {{ movie_data[i]['url'] }}>{{ movie_data[i]['title'] }}</a></h5></td>
+                    </tr>
+                {% endfor %}
+    
+{% endblock %}

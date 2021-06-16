@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Music
+{% endblock %}
+
+{% block main %}
+    <h4>Your custom playlist is ready: </h4>
+    <br>
+    <form>
+        <input class = "btn btn-dark" type="button" value="Take me to the Playlist!" onclick="window.location.href='{{playlist}}'"/>
+    </form>
+    <br><br>
+    <h5>Alternatively, you can open your Spotify library</h5>
+    <h5>and your custom playlist will be ready for you there.</h5>
+    
+{% endblock %}

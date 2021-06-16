@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<h2>Hi {{ name }} !!</h2>
+<br>
+<h5>How are you feeling right now ?</h5>
+<br>
+<form action="/" method="post">
+    <div class="slidercontainer">
+
+        <h5 style="text-align: right">Elated</h5>
+        <input type="range" min="0" max="100" value="50" class="slider" id="myRange" name="feeling">
+        <h5 style="text-align: left">Disconsolate</h5>
+        <p>Value: <span id="demo"></span></p>
+        
+    </div>
+    <br>
+    <h5>Also, select one word which best describes your current mood: </h5>
+    <br>
+
+    <div class="form-group">
+        <select class="btn btn-dark" name="mood">
+            <option disabled selected>Mood</option>
+            <option>Downhearted</option>
+            <option>Distasteful</option>
+            <option>Annoyed</option>
+            <option>Anxious</option>
+            <option>Calm</option>
+            <option>Excited</option>
+            <option>Delighted</option>
+            <option>Thrilled</option>
+        </select>
+    </div>
+    <br>
+    <button id="button" class="btn btn-dark" type="submit" onclick="picture()">Submit</button>
+    <br><br>
+    <img id="load" class="hidden" src="/static/Loading.gif" alt="Loading..." width="150" style="display:none;"/>
+</form>
+
+<script src="/static/script.js"></script>
+{% endblock %}
