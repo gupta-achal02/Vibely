@@ -1,7 +1,8 @@
 # Vibely
 Vibely is an app which creates a custom playlist for you on Spotify and also recommends movies to watch based on your mood. It is made with Flask + Jinja along with HTML, CSS and JavaScript. 
 
-
+#### [Demo](https://vibely.herokuappo.com)
+Note: The demo website is facing some issues, but it is enough to get the general gist of how the app works. I feel too lazy to fix it. :P
 
 ### Prerequisites
 

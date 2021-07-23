@@ -6,6 +6,8 @@ import spotipy
 import uuid
 from functions import return_top_artists, return_top_tracks, select_tracks, create_playlist, get_movie_data
 
+
+
 """ 
     First create a new app at 'Spotify for Developers' (https://developer.spotify.com/dashboard/applications)
     set these three as environment variables before running the application:
@@ -17,9 +19,7 @@ from functions import return_top_artists, return_top_tracks, select_tracks, crea
     SPOTIPY_REDIRECT_URI must be added to your [app settings](https://developer.spotify.com/dashboard/applications)
 """
 
-state = False
-playlist = ''
-movie_data = []
+
 
 # setting the scope (the information we need from the Spotify API)
 scope = 'user-library-read user-top-read playlist-modify-public user-follow-read'
@@ -31,6 +31,7 @@ app.config['SECRET_KEY'] = os.urandom(64)
 # Configure session to use filesystem
 app.config['SESSION_TYPE'] = 'filesystem'
 app.config['SESSION_FILE_DIR'] = './.flask_session/'
+
 Session(app)
 
 
@@ -51,9 +52,14 @@ def index():
     global playlist
     global movie_data
 
+    state = False
+    playlist = ''
+    movie_data = []
+
     if not session.get('uuid'):
         # If user is unknown, give random ID
         session['uuid'] = str(uuid.uuid4())
+        
 
     cache_handler = spotipy.cache_handler.CacheFileHandler(cache_path=session_cache_path())
 
@@ -75,6 +81,7 @@ def index():
     
     # User reached route via POST
     if request.method == "POST":
+        
         # render 'noinput.html' if no value is given to the 'Mood' field
         if not request.form.get("mood"):
             state = False
@@ -112,10 +119,16 @@ def index():
 
 @app.route('/logout')
 def logout():
+    global state
+    global playlist
+    global movie_data 
     try:
         # Remove the CACHE file (.cache-test) so that a new user can authorize.
         os.remove(session_cache_path())
         session.clear()
+        state = False
+        playlist = ''
+        movie_data = []
     except OSError as e:
         print ("Error: %s - %s." % (e.filename, e.strerror))
     return redirect('/')
@@ -145,12 +158,13 @@ def movie():
     else:
         return render_template("noinput.html")
 
+
 '''Following lines allow application to be run more conveniently with
 `python app.py` (Make sure you're using python3)
 (Also includes directive to leverage pythons threading capacity.)
 '''
 if __name__ == '__main__':
-    app.run(threaded=True, port=int(os.environ.get("PORT", 8080)))
+    app.run(threaded=True, port=int(os.environ.get("PORT", 5000)))
 
 
 
