@@ -20,13 +20,37 @@ SPOTIPY_REDIRECT_URI must be added to your [app settings ](https://developer.spo
 
 ### Layout and working
 
-I've made the frontend as minimalistic as possible with a lot of whitespaces, as my focus was on the 'Python' side of things.
+I've made the frontend as minimalistic as possible with a lot of whitespaces, as my focus was more on the backend.
 
-In the first webpage you will be asked to Sign in with your Spotify account. After signing in, you'll have to click 'Agree' to permit Vibely to access your account data which will include your followed and liked artists.
+In the first webpage you will be asked to Sign in with your Spotify account.
+
+![Page 1](https://github.com/hailASG/Vibely/blob/main/Images/1.png)
+
+
+After signing in, you'll have to click 'Agree' to permit Vibely to access your account data which will include your followed and liked artists.
+
+![Page 2](https://github.com/hailASG/Vibely/blob/main/Images/2.png)
+
 
 After clicking 'Agree', you'll be redirected to the Homepage where you'll be asked about your current 'Feeling' and 'Mood'. The first form has an input slider ranging from 0 - 100; 0 implying that you are feeling 'Disconsolate' and 100 implying that you are feeling 'Elated'. This input will determine the choice of music in the custom playlist. Whereas the second form has a dropdown menu with various 'moods' that you might be experiencing viz. "Downhearted", "Distasteful", "Annoyed", "Thrilled", "Anxious", "Delighted", "Excited" and "Calm". This input will determine the choice of movies.
 
-After clicking 'Submit', you'll be redirected to the Music tab of the webpage where you'll see a confirmation message that your custom playlist has been created for you. You can press the 'Take me to the Playlist!!' button to directly launch the Spotify app to view the contents of the playlist; it will be named as 'Vibely ' followed by the number you selected. In the webpage you can select the Movie tab to see your movie recommendations. Clicking on the name of any movie you like will redirect you to its IMDb page.
+![Page 3](https://github.com/hailASG/Vibely/blob/main/Images/3.png)
+
+
+After clicking 'Submit', you'll be redirected to the Music tab of the webpage where you'll see a confirmation message that your custom playlist has been created for you.
+
+![Page 4](https://github.com/hailASG/Vibely/blob/main/Images/4.png)
+
+
+You can press the 'Take me to the Playlist!!' button to directly launch the Spotify app to view the contents of the playlist; it will be named as 'Vibely ' followed by the number you selected.
+
+![Page 5](https://github.com/hailASG/Vibely/blob/main/Images/5.png)
+
+
+In the webpage you can select the Movie tab to see your movie recommendations. Clicking on the name of any movie you like will redirect you to its IMDb page.
+
+![Page 6](https://github.com/hailASG/Vibely/blob/main/Images/6.png)
+
 
 Now let's look at the various files in the repository.
 
